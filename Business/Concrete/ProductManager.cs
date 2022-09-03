@@ -31,10 +31,12 @@ namespace Business.Concrete {
 
             IResult result = BusinessRules.Run(
                 CheckIfProductNameExist(product.ProductName),
-                CheckIfProductOfCategoryCorrect(product.CategoryId),
-                CheckIfCategoryLimitExceeded());
-            
-            if (result != null) {
+                CheckIfProductOfCategoryCorrect(product.CategoryId)
+                //CheckIfCategoryLimitExceeded()
+                );
+
+            if (result != null)
+            {
                 return result;
             }
 
