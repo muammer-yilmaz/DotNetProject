@@ -54,10 +54,10 @@ namespace WebAPI.Controllers {
             return BadRequest(result);
         }
 
-        [HttpGet("getbyc")]
-        public IActionResult GetByC(int id)
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
         {
-            var result = _productService.GetAllByCategoryId(id);
+            var result = _productService.GetAllByCategoryId(categoryId);
             if (result.Success)
             {
                 return Ok(result);
