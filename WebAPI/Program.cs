@@ -1,5 +1,4 @@
 using Autofac;
-using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using Business.DependencyResolvers.Autofac;
 using Core.DependencyResolvers;
@@ -19,8 +18,8 @@ namespace WebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
-                .ConfigureContainer<ContainerBuilder>(builder => 
-                { 
+                .ConfigureContainer<ContainerBuilder>(builder =>
+                {
                     builder.RegisterModule(new AutofacBusinessModule());
                 });
 
